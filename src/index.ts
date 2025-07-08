@@ -6,8 +6,7 @@
  */
 export interface SnapDBPlugin {
   /** Called after SnapDB is constructed. */
-  onInit?(db: SnapDB): void | Promise<void>;
-  /** Called before a value is set. Can modify value or TTL. */
+  onInit?(db: SnapDB): void | Promise<void>; /** Called before a value is set. Can modify value or TTL. */
   beforeSet?(key: string, value: any, ttl?: number): { value: any; ttl?: number } | Promise<{ value: any; ttl?: number }>;
   /** Called after a value is set. */
   afterSet?(key: string, value: any, ttl?: number): void | Promise<void>;
