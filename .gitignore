@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Test output and coverage
+coverage/
+
+# Local env files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# Snapshots
+*.snap
+
+# Misc
+*.tgz
+
+# Test DB files
+testdb.json
