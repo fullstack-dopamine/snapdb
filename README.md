@@ -13,12 +13,12 @@ A lightweight, fast, in-memory key-value store for Node.js, inspired by Redis. P
 
 ## Install
 ```sh
-npm install snapdb
+npm install snapdbjs
 ```
 
 ## Usage
 ```ts
-import SnapDB from 'snapdb';
+import SnapDB from 'snapdbjs';
 
 const db = new SnapDB({ defaultTTL: 60000 });
 
@@ -64,7 +64,7 @@ SnapDB supports a powerful plugin system for advanced use cases. Plugins can hoo
 
 ### Using Plugins
 ```ts
-import SnapDB from 'snapdb';
+import SnapDB from 'snapdbjs';
 import { LRUPlugin } from './plugins/plugin-lru';
 import { PersistencePlugin } from './plugins/plugin-persistence';
 import { MetricsPlugin } from './plugins/plugin-metrics';

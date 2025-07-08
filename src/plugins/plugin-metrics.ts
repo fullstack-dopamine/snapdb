@@ -19,22 +19,22 @@ export function MetricsPlugin(): SnapDBPlugin {
     afterDel() { metrics.del++; },
     // No hooks for exists/keys/ttl, so monkey-patch methods
     onInit(db) {
-      const origExists = db.exists.bind(db);
-      db.exists = async function (...args: any[]) {
+      const origExists = db.exists.bind(db) as (...args: any[]) => any;
+      db.exists = async function (...args: any[]): Promise<any> {
         metrics.exists++;
         return origExists(...args);
       };
-      const origKeys = db.keys.bind(db);
-      db.keys = async function (...args: any[]) {
+      const origKeys = db.keys.bind(db) as (...args: any[]) => any;
+      db.keys = async function (...args: any[]): Promise<any> {
         metrics.keys++;
         return origKeys(...args);
       };
-      const origTtl = db.ttl.bind(db);
-      db.ttl = async function (...args: any[]) {
+      const origTtl = db.ttl.bind(db) as (...args: any[]) => any;
+      db.ttl = async function (...args: any[]): Promise<any> {
         metrics.ttl++;
         return origTtl(...args);
       };
-      db.getMetrics = () => ({ ...metrics });
+      (db as any).getMetrics = () => ({ ...metrics });
     },
   };
 } 

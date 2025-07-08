@@ -12,7 +12,7 @@ export interface EncryptionPluginOptions {
 export function EncryptionPlugin(options: EncryptionPluginOptions): SnapDBPlugin {
   const algorithm = 'aes-256-gcm';
   function deriveKey() {
-    return scryptSync(options.passphrase, 'snapdb-salt', 32);
+    return scryptSync(options.passphrase, 'snapdbjs-salt', 32);
   }
   return {
     beforeSet(keyName: string, value: any, ttl?: number) {

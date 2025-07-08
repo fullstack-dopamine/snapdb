@@ -1,5 +1,5 @@
 {
-  "name": "snapdb",
+  "name": "snapdbjs",
   "version": "1.0.0",
   "description": "A fast, lightweight, Redis-like in-memory database for Node.js with plugin and middleware support. Perfect for ephemeral data, rate limiting, OTPs, tokens, and more.",
   "main": "dist/index.js",
